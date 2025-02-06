@@ -3,38 +3,37 @@ import styles from "./burger-menu.module.css";
 import { NavLink } from "react-router-dom";
 import { Overlay } from "../Overlay";
 
-export const BurgerMenu = () => {
+export const BurgerMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+
+  interface CustomNavLinkProps {
+    isActive: boolean;
+  }
 
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
   };
 
-  // Закрытие меню при увеличении ширины экрана
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 576) {
-        setMenuOpen(false); // Автоматически закрываем меню
+        setMenuOpen(false);
       }
     };
 
-    // Подписка на событие изменения размера окна
     window.addEventListener("resize", handleResize);
 
-    // Удаление обработчика при размонтировании компонента
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Эффект выполняется один раз при монтировании компонента
+  }, []);
 
-  // Функция для добавления активного класса к ссылке
-  const getActiveClass = ({ isActive }: { isActive: boolean }) =>
+  const getActiveClass = ({ isActive }: CustomNavLinkProps): string =>
     isActive ? styles.active : styles.inactive;
 
   return (
     <>
-      {/* Затемняющий фон */}
-      
+      <Overlay isOpen={menuOpen} onClick={() => setMenuOpen(false)} />
       <button
         className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
         onClick={toggleMenu}
@@ -48,9 +47,7 @@ export const BurgerMenu = () => {
           }`}
         ></span>
         <span
-          className={`${styles.burgerLine} ${
-            menuOpen ? styles.lineBottom : ""
-          }`}
+          className={`${styles.burgerLine} ${menuOpen ? styles.lineBottom : ""}`}
         ></span>
       </button>
 
@@ -68,7 +65,6 @@ export const BurgerMenu = () => {
           Тексты
         </NavLink>
       </div>
-      <Overlay isOpen={menuOpen} onClick={() => setMenuOpen(false)} />
     </>
   );
 };

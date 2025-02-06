@@ -2,7 +2,7 @@ import styles from "./header.module.css";
 import { NavLink } from "react-router-dom";
 import { BurgerMenu } from "../BurgerMenu";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>

@@ -1,12 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import {Header} from '../Header';
+import styles from "./layout.module.css";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 
-export const Layout = ({children}: React.PropsWithChildren) => {
-    return <div className="container small">
-        <Header />
-        <main>
-            {children}
-        </main>
+export const Layout = ({ children }: React.PropsWithChildren) => {
+  return (
+    <div className={styles.container}>
+      <Header />
+      <main className={styles.main}>{children}</main>
+      <Footer />
     </div>
+  );
 };
