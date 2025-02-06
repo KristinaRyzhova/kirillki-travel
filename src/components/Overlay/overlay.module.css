@@ -1,0 +1,31 @@
+.overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  transition: background-color 0.15s ease;
+  z-index: 5;
+}
+
+.overlayVisible {
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: all; /* Включаем кликабельность */
+}
+
+@media (min-width: 577px) and (max-width: 1024px) {
+  .overlay {
+    top: 50px;
+    height: calc(100% - 50px);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .overlay {
+    top: 40px;
+    height: calc(100% - 40px);
+  }
+}
+
