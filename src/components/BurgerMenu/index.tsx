@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./burger-menu.module.css";
 import { NavLink } from "react-router-dom";
-import { Overlay } from "../Overlay";
 
 export const BurgerMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -33,7 +32,6 @@ export const BurgerMenu: React.FC = () => {
 
   return (
     <>
-      <Overlay isOpen={menuOpen} onClick={() => setMenuOpen(false)} />
       <button
         className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ""}`}
         onClick={toggleMenu}
@@ -47,7 +45,9 @@ export const BurgerMenu: React.FC = () => {
           }`}
         ></span>
         <span
-          className={`${styles.burgerLine} ${menuOpen ? styles.lineBottom : ""}`}
+          className={`${styles.burgerLine} ${
+            menuOpen ? styles.lineBottom : ""
+          }`}
         ></span>
       </button>
 
@@ -55,6 +55,9 @@ export const BurgerMenu: React.FC = () => {
         className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}
         onClick={() => setMenuOpen(false)}
       >
+        <NavLink to="/" className={getActiveClass}>
+          Главная
+        </NavLink>
         <NavLink to="/about" className={getActiveClass}>
           О нас
         </NavLink>
