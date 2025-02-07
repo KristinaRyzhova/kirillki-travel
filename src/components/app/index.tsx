@@ -3,10 +3,10 @@ import {
 	Route,
 } from 'react-router-dom';
 
-import {Home} from '../pages/Home';
-import {About} from '../pages/About';
-import {Photo} from '../pages/Photo';
-import {Texts} from '../pages/Texts';
+import {Home} from '../../pages/Home';
+import {About} from '../../pages/About';
+import {Photo} from '../../pages/Photo';
+import {Texts} from '../../pages/Texts';
 
 export const App = () => {
 	return (
