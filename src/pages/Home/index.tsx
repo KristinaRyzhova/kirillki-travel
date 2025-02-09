@@ -1,12 +1,10 @@
 import { Layout } from "../../components/Layout";
-import { LeftPartHomepage } from "../../components/LeftPartHomepage";
-/* import { RightPartHomepage } from "../../components/RightPartHomepage"; */
+import { Homepage } from "../../components/Homepage";
 
 export const Home = () => {
   return (
     <Layout>
-      <LeftPartHomepage />
-      {/* <RightPartHomepage /> */}
+      <Homepage />
     </Layout>
   );
 };

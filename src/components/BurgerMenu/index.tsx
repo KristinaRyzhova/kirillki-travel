@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./burger-menu.module.css";
 import { NavLink } from "react-router-dom";
+import { Overlay } from "../Overlay";
 
 export const BurgerMenu: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -27,6 +28,18 @@ export const BurgerMenu: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const getActiveClass = ({ isActive }: CustomNavLinkProps): string =>
     isActive ? styles.active : styles.inactive;
 
@@ -51,7 +64,9 @@ export const BurgerMenu: React.FC = () => {
         ></span>
       </button>
 
-      <div
+      <Overlay isVisible={menuOpen} onClick={() => setMenuOpen(false)} />
+
+      <nav
         className={`${styles.menu} ${menuOpen ? styles.menuOpen : ""}`}
         onClick={() => setMenuOpen(false)}
       >
@@ -67,7 +82,7 @@ export const BurgerMenu: React.FC = () => {
         <NavLink to="/texts" className={getActiveClass}>
           Тексты
         </NavLink>
-      </div>
+      </nav>
     </>
   );
 };
