@@ -1,10 +1,10 @@
 import React from "react";
 
 import styles from "./layout.module.css";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
+import { Header } from "../../header/header";
+import { Footer } from "../../footer/footer";
 
-export const Layout = ({ children }: React.PropsWithChildren) => {
+export const LayoutUI = ({ children }: React.PropsWithChildren) => {
   return (
     <div className={styles.container}>
       <Header />

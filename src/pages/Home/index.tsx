@@ -1,10 +1,10 @@
-import { Layout } from "../../components/Layout";
-import { Homepage } from "../../components/Homepage";
+import { LayoutUI } from "../../components/ui";
+import { Homepage } from "../../components/home-page/home-page";
 
 export const Home = () => {
   return (
-    <Layout>
+    <LayoutUI>
       <Homepage />
-    </Layout>
+    </LayoutUI>
   );
 };

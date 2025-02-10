@@ -1,11 +1,11 @@
 import { LayoutUI } from "../../components/ui";
 
-export const About = () => {
+export const PhotoPage = () => {
   return (
     <LayoutUI>
-      <h1>О нас</h1>
+      <h1>Фотоальбом</h1>
       <section>
-        <h3>Кратко о нашей семье</h3>
+        <h3>фото из наших поездок</h3>
       </section>
     </LayoutUI>
   );

@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "./overlay.module.css";
+import { OverlayPropsUI } from "./type";
 
-interface OverlayProps {
-  isVisible: boolean;
-  onClick: () => void;
-}
-
-export const Overlay: React.FC<OverlayProps> = ({ isVisible, onClick }) => {
+export const OverlayUI: React.FC<OverlayPropsUI> = ({ isVisible, onClick }) => {
   return isVisible ? (
     <div className={styles.overlay} onClick={onClick}></div>
   ) : null;
