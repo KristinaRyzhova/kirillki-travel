@@ -1,38 +1,16 @@
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 200;
-    margin: 0;
-    padding: 0;
-    background-color: #212121;
-    border-radius: 0;
-    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .modalContent {
-    position: relative;
-  }
-  
-  .closeButton {
-    margin: 0;
-    padding: 0;
-    border: none;
-    position: absolute;
-    width: 28px;
-    height: 28px;
-    top: -40px;
-    right: 0;
-    background-color: transparent;
-    background-image: url("../../../public/close-icon.svg");
-    background-size: 28px 28px;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-  }
-  
-  .closeButton:hover {
-    opacity: 0.6;
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  margin: 0;
+  padding: 0;
+  background-color: #212121;
+  border-radius: 0;
+  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  position: relative;
+}

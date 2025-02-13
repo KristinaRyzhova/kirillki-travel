@@ -1,11 +1,7 @@
-import React, { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { ModalUI } from "../ui";
-
-type ModalProps = {
-  onClose: () => void;
-  children: React.ReactNode;
-};
+import { ModalProps } from "./type";
 
 const modalRoot = document.getElementById("modals");
 

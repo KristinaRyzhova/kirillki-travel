@@ -1,1 +1,0 @@
-export { TextsPage } from './TextsPage';

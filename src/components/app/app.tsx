@@ -1,10 +1,10 @@
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { Home } from "../../pages/Home";
-import { About } from "../../pages/About";
-import { PhotoDetailsById } from "../photo-details-by-id/photo-details-by-id";
+import { Home } from "../../pages/home";
+import { About } from "../../pages/about";
 import { Modal } from "../modal/modal";
-import { PhotoPage } from "../../pages/PhotoPage";
-import { TextsPage } from "../../pages/TextsPage";
+import { PhotoPage } from "../../pages/photo-page";
+import { TextsPage } from "../../pages/texts-page";
+import { HomePagePhotoGallery } from "../home-page-gallery";
 
 export const App = () => {
   const location = useLocation();
@@ -22,7 +22,8 @@ export const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/photo" element={<PhotoPage />} />
         <Route path="/texts" element={<TextsPage />} />
-        <Route path="/photo/:id" element={<PhotoDetailsById />} />
+        <Route path="/photo/:id" element={<HomePagePhotoGallery onClose={closeModal} />} />
+        photo-details-by-id.tsx(7, 3): Здесь объявлен "onClose".
       </Routes>
       {backgroundLocation && (
         <Routes>
@@ -30,7 +31,7 @@ export const App = () => {
             path="/photo/:id"
             element={
               <Modal onClose={closeModal}>
-                <PhotoDetailsById />
+                <HomePagePhotoGallery onClose={closeModal} />
               </Modal>
             }
           />
