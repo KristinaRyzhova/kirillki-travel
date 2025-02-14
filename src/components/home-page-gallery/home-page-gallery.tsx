@@ -3,13 +3,7 @@ import { useParams } from "react-router-dom";
 import { initialCards } from "../../utils/constant";
 import { HomePagePhotoGalleryUI } from "../ui";
 
-type HomePagePhotoGalleryProps = {
-  onClose: () => void;
-};
-
-export const HomePagePhotoGallery: React.FC<HomePagePhotoGalleryProps> = ({
-  onClose,
-}) => {
+export const HomePagePhotoGallery: React.FC = () => {
   const { id } = useParams();
   const card = initialCards.find((card) => card.id === id);
 
@@ -18,6 +12,6 @@ export const HomePagePhotoGallery: React.FC<HomePagePhotoGalleryProps> = ({
   }
 
   return (
-    <HomePagePhotoGalleryUI link={card.link} name={card.name} onClose={onClose} />
+    <HomePagePhotoGalleryUI link={card.link} name={card.name} />
   );
 };

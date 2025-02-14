@@ -8,7 +8,13 @@ export const ModalUI: FC<ModalUIProps> = ({ onClose, children }) => {
     <>
       <OverlayUI isVisible={true} onClick={onClose} />
       <div className={styles.modal}>
-        <div className={styles.modalContent}>{children}</div>
+        <button
+          onClick={onClose}
+          aria-label="Close modal"
+          className={styles.closeButton}
+          type="button"
+        ></button>
+        {children}
       </div>
     </>
   );

@@ -84,6 +84,18 @@ export const HomepageUI: React.FC<HomepageUIProps> = ({ cards, onCardClick }) =>
             </div>
           ))}
         </section>
+        <section className={styles.cardsGalleryNoClick}>
+          {cards.map((card) => (
+            <div key={card.id} className={styles.card}>
+              <img
+                src={card.link}
+                alt={card.name}
+                className={styles.cardImage}
+              />
+            </div>
+          ))}
+        </section>
+        
       </section>
     </div>
   );

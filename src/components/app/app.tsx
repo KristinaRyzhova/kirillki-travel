@@ -22,8 +22,7 @@ export const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/photo" element={<PhotoPage />} />
         <Route path="/texts" element={<TextsPage />} />
-        <Route path="/photo/:id" element={<HomePagePhotoGallery onClose={closeModal} />} />
-        photo-details-by-id.tsx(7, 3): Здесь объявлен "onClose".
+        <Route path="/photo/:id" element={<HomePagePhotoGallery />} />
       </Routes>
       {backgroundLocation && (
         <Routes>
@@ -31,7 +30,7 @@ export const App = () => {
             path="/photo/:id"
             element={
               <Modal onClose={closeModal}>
-                <HomePagePhotoGallery onClose={closeModal} />
+                <HomePagePhotoGallery />
               </Modal>
             }
           />

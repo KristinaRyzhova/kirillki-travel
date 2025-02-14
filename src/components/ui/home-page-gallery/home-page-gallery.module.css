@@ -1,24 +1,21 @@
 .photoDetailsContainer {
-  max-width: 75vw;
-  max-height: 75vw;
-  margin: auto;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: transparent;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  width: auto;
+  max-height: 90vh;
+  margin: auto;
+  overflow: hidden;
 }
 
 .photoImage {
-  max-width: 75vw;
-  max-height: 75vh;
-  object-fit: contain;
   display: block;
-  background-position: center;
+  max-height: 75vh;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .photoTitle {
@@ -32,41 +29,8 @@
   text-align: center;
 }
 
-.closeButton {
-  padding: 0;
-  margin: 0 0 10px 0;
-  width: 24px;
-  height: 24px;
-  border: none;
-  background-color: transparent;
-  background-image: url("../../../public/close-icon.svg");
-  background-size: 24px 24px;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-  align-self: flex-end;
-}
-
-.closeButton:hover {
-  opacity: 0.6;
-}
-
-@media (min-width: 577px) and (max-width: 1024px) {
+@media (min-width: 320px) and (max-width: 576px) {
   .photoTitle {
     font-size: 14px;
-  }
-  
-  .closeButton {
-    background-size: 22px 22px;
-    background-size: 22px 22px;
-    position: absolute;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 576px) {
-  .closeButton {
-    background-size: 20px 20px;
-    background-size: 20px 20px;
-    position: absolute;
   }
 }
